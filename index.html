@@ -4,32 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-time-with-data-1970-2030.min.js"></script>
 <title>World Clock - Delight Tshirando</title>
 </head>
 <body>
 <div class="container">
 <h1>World Clock</h1>
-<select>
+<select id="city">
 <option value="">Select a city..</option>
-<option value="">Johannesburg</option>
-<option value="">Louis Trichardt</option>
-<option value="">Polokwane</option>
+<option value="Africa/Johannesburg">Johannesburg</option>
+<option value="Africa/Louis Trichardt">Louis Trichardt</option>
+<option value="Africa/Polokwane">Polokwane</option>
 </select>
 
-
-<div class="city">
+<div id="cities">
+<div class="city" id="thohoyandou">
 <div>
 <h2>Thohoyandou 🇿🇦</h2>
-<div class="date">August 15th 2022</div>
+<div class="date"></div>
 </div>
-<div class="time">1:33:55 <small>AM</small></div>
+<div class="time"></div>
 </div>
-<div class="city">
+<div class="city" id="tshilamba">
 <div>
-<h2>Thohoyandou 🇿🇦</h2>
-<div class="date">August 15th 2022</div>
+<h2>Tshilamba 🇿🇦</h2>
+<div class="date"></div>
 </div>
-<div class="time">1:33:55 <small>AM</small></div>
+<div class="time"></div>
+</div>
 </div>
 </div>
 <footer>This project was coded with ❤️ by <strong>Delight Tshirando</strong> and is 

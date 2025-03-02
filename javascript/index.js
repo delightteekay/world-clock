@@ -31,7 +31,10 @@ tshilambaTimeElement.innerHTML = tshilambaTime.format("h:mm:ss [<small>]A[</smal
 
 function updateCity(event) {
 let cityTimezone = Event.target.value;
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+}
+let cityName = cityTimeZone.replace("_", " ").split("/")[1];
 let cityTime = moment().tz(cityTimezone);
 let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = `

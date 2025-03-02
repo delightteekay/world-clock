@@ -1,53 +1,54 @@
 function updateTime() {
 
-// Thohoyandou
+// Johannesburg
 
-let thohoyandouElement = document.querySelector("#thohoyandou");
-if (thohoyandouElement) {
-let thohoyandouDateElement = thohoyandouElement.querySelector(".date");
-let thohoyandouTimeElement = thohoyandouElement.querySelector(".time");
-let thohoyandouTime = moment();
+let johannesburgElement = document.querySelector("#johannesburg");
+if (johannesburgElement) {
+let johannesburgDateElement = johannesburgElement.querySelector(".date");
+let johannesburgTimeElement = johannesburgElement.querySelector(".time");
+let JohannesburgTime = moment().tz("Africa/Johannesburg");
 
-thohoyandouDateElement.innerHTML = thohoyandouTime.format("MMMM Do YYYY");
-thohoyandouTimeElement.innerHTML = thohoyandouTime.format("h:mm:ss [<small>]A[</small>]");
+johannesburgDateElement.innerHTML = JohannesburgTime.format("MMMM Do YYYY");
+johannesburgTimeElement.innerHTML = JohannesburgTime.format("h:mm:ss [<small>]A[</small>]");
 
 }
 
 
-// Tshilamba
+// Montreal
 
-let tshilambaElement = document.querySelector("#tshilamba");
-  if (tshilambaElement) {
-let tshilambaDateElement = tshilambaElement.querySelector(".date");
-let tshilambaTimeElement = tshilambaElement.querySelector(".time");
-let tshilambaTime = moment();
+let montrealElement = document.querySelector("#montreal");
+if (montrealElement) {
+let montrealDateElement = montrealElement.querySelector(".date");
+let montrealTimeElement = montrealElement.querySelector(".time");
+let montrealTime = moment().tz("America/Montreal");
 
-tshilambaDateElement.innerHTML = tshilambaTime.format("MMMM Do YYYY");
-tshilambaTimeElement.innerHTML = tshilambaTime.format("h:mm:ss [<small>]A[</small>]");
+montrealDateElement.innerHTML = montrealTime.format("MMMM Do YYYY");
+montrealTimeElement.innerHTML = montrealTime.format("h:mm:ss [<small>]A[</small>]");
 
-  }
+}
 
 }
 
 function updateCity(event) {
-let cityTimezone = Event.target.value;
-if (cityTimeZone === "current") {
-    cityTimeZone = moment.tz.guess();
+let cityTimezone = event.target.value;
+if (cityTimezone === "current") {
+    cityTimezone = moment.tz.guess();
 }
-let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+let cityName = cityTimezone.replace("_", " ").split("/")[1];
 let cityTime = moment().tz(cityTimezone);
 let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `
-  <div class="city">
-    <div>
-      <h2>${cityName}</h2>
-      <div class="date">${cityTime.format("MMMM	Do YYYY")}</div>
-    </div>
-    <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
-    "A"
-  )}</small></div>
-  </div>
-  `;
+citiesElement.innerHTML = `
+<div class="city">
+<div>
+<h2>${cityName}</h2>
+<div class="date">${cityTime.format("MMMM	Do YYYY")}</div>
+</div>
+<div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
+"A"
+)}</small></div>
+</div>
+<a href="/">All cities</a>
+`;
 
 }
 
